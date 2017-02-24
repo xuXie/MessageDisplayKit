@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-#define kXHShareMenuItemWidth 60
+#define kXHShareMenuPerRowItemCount (kIsiPad ? 10 : 4)
+
+#define kXHShareMenuItemWidth (MIN([[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height)-(kXHShareMenuPerRowItemCount+1)*16)/(CGFloat)kXHShareMenuPerRowItemCount
 #define KXHShareMenuItemHeight 80
 
 @interface XHShareMenuItem : NSObject
